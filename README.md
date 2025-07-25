@@ -10,6 +10,11 @@
 * Geometric and physics-consistent reasoning
 * Verification of image and video generation outcomes
 
+<p align="center">
+  <img src="assets/pipeline.png" width="500"/>
+</p>
+
+
 <!-- ## Pipeline Summary -->
 The BATI reasoning pipeline consists of the following stages:
 
@@ -18,9 +23,6 @@ The BATI reasoning pipeline consists of the following stages:
 3. **Self-Check**: After completing each subtask, perform a validation check to ensure the intermediate result aligns with the intended goal.
 4. **Final Result**: Aggregate the validated intermediate results to produce the final output.
 
-<p align="center">
-  <img src="assets/pipeline.png" width="800"/>
-</p>
 
 ## Acknowledgement
 
