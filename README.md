@@ -11,7 +11,7 @@
 * Verification of image and video generation outcomes
 
 <p align="center">
-  <img src="assets/pipeline.png" width="500"/>
+  <img src="assets/pipeline.png" width="600"/>
 </p>
 
 
