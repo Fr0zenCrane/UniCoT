@@ -15,3 +15,7 @@ The BATI reasoning pipeline consists of the following stages:
 2. **Stepwise Execution**: Execute each subtask using the unified model with step-by-step reasoning.
 3. **Self-Check**: After completing each subtask, perform a validation check to ensure the intermediate result aligns with the intended goal.
 4. **Final Result**: Aggregate the validated intermediate results to produce the final output.
+
+## Acknowledgement
+
+- This project is based on ![Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made BATI possible.
