@@ -1,6 +1,6 @@
-# <span style="color:#FF69B4"><strong>B</strong></span><span style="color:#FFD700"><strong>A</strong></span><span style="color:#40E0D0"><strong>T</strong></span><span style="color:#8A2BE2"><strong>I</strong></span>: <span style="color:#FF69B4"><strong>B</strong></span><span style="color:#FFD700"><strong>A</strong></span>gel-based Unified Chain of Thought Across <span style="color:#40E0D0"><strong>T</strong></span>ext and <span style="color:#8A2BE2"><strong>I</strong></span>mage
+# **BATI**: **BA**gel-based Unified Chain of Thought Across **T**ext and **Image** 
 
-[[Project]](https://github.com/SAIS-FUXI/projects) / [[Report]](technical_repo.md) / [[Model]](https://huggingface.co)
+[[Project]](https://github.com/SAIS-FUXI/projects) / [[Report]](technical_report.md) / [[Model]](https://huggingface.co)
 
 ## Overview
 
