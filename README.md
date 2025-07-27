@@ -50,7 +50,7 @@ A list of planned features and enhancements for the **BATI** framework:
 
 ### Quantitative Results
 <p align="center">
-  <img src="assets/quantitative_results.png" width="800"/>
+  <img src="assets/result_wise.png" width="800"/>
 
 
 
