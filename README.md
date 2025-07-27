@@ -44,7 +44,7 @@ A list of planned features and enhancements for the **BATI** framework:
 ---
 
 ## Preliminary Results for Highly Reliable Image Generation
-### Qualiative Results
+### Qualitative Results
 <p align="center">
   <img src="assets/qualitative_results.png" width="800"/>
 
