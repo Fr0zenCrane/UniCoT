@@ -65,7 +65,7 @@ A list of planned features and enhancements for the **BATI** framework:
 
 
 
-### Self-Reflect Generation
+### Self-check Reasoning
 
 
 ## Star History
