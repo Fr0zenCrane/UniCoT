@@ -25,17 +25,18 @@ The BATI reasoning pipeline consists of the following stages:
 
 ## Key Insight
 
-A major challenge in UniCoT learning is the increased complexity when visual reasoning is involved. 
-Each reasoning step requires generating a reasoning text and a corresponding image. Producing a high-quality image via VAE consumes ~3,450 tokens, and an additional ~3,450 tokens are needed to generate a ViT-based representation for understanding, totaling ~6,900 tokens per step as shown below. 
-This far exceeds the 512–1,024 tokens typical in text-only reasoning, making training and inference significantly more resource-intensive. 
-As the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
+A major challenge in UniCoT learning is the heightened complexity introduced by visual reasoning.
+Each reasoning step involves not only generating explanatory text but also synthesizing a corresponding image. 
+Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 1,369 tokens required for ViT-based representation, totaling nearly 6,000 tokens per step. 
+This is a significant increase compared to the 512–1,024 tokens typically needed for text-only reasoning, substantially raising the cost of both training and inference. 
+Consequently, when the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
 
 <p align="center">
   <img src="assets/motivation.png" width="800"/>
 </p>
 
 To mitigate the complexity introduced by long multimodal reasoning chains, we reformulate the UniCoT process as a Markov Decision Process (MDP), where each step depends solely on the current state. 
-Concretely, we model each reasoning step, comprising a textual and visual component, as a discrete MDP node, generated based only on the preceding step and the task instruction. 
+Concretely, we model each reasoning step as a discrete MDP node, which only depends on the preceding step and the task instruction. 
 This formulation enables the model to focus on learning local transition dynamics between adjacent nodes, rather than capturing dependencies across the entire reasoning chain as shown below. 
 Such a design choice significantly reduces computational overhead and improves training efficiency.
 <p align="center">
