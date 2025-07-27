@@ -9,7 +9,6 @@ By decomposing a given task into simple, modular steps and executing them sequen
 * Geometric and physical reasoning
 * Highly reliable image and video generation/editing
 
-<!-- ## Pipeline Summary -->
 The BATI reasoning pipeline consists of the following stages:
 
 1. **Planning**: Decompose the complex task into a sequence of simpler, manageable subtasks.
