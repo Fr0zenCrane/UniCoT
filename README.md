@@ -87,6 +87,16 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### Installation
 
+The environment setup of Uni-CoT is consistent with its base model, [Bagel](https://github.com/ByteDance-Seed/Bagel).
+
+```
+git clone https://github.com/Fr0zenCrane/UniCoT.git
+cd UniCoT
+conda create -n unicot python=3.10 -y
+conda activate unicot
+pip install -r requirements.txt
+pip install flash_attn==2.5.8 --no-build-isolation
+```
 
 ### Model Download
 
