@@ -56,7 +56,7 @@ Concretely, we model each reasoning step as a discrete MDP node, which only depe
 This formulation enables the model to focus on learning local transition dynamics between adjacent nodes, rather than capturing dependencies across the entire reasoning chain as shown below. 
 Such a design choice significantly reduces computational overhead and improves training efficiency.
 <p align="center">
-  <img src="assets/mdp_process.png" width="800"/>
+  <img src="assets/mdp_process.png" width="400"/>
 </p>
 
 ---
@@ -70,10 +70,10 @@ Each MDP node is defined by the following components:
 * **State ($s_t$)**: Current context, refer to last reasoning step, including both text and images.
 * **Action ($a_t$)**: A hybrid operation that involves generating editing instructions and performing corresponding image edits.
 * **Next State ($s_{t+1}$)**: The updated context resulting from the applied action, including the edited image, a textual summary according to the edited image.
-* **Reward ($r_{t+1}$)**: A textual conclusion or scalar score that quantifies the alignment between the outcome and the task objective.
+* **Reward ($r_{t}$)**: A textual conclusion or scalar score that quantifies the alignment between the outcome and the task objective.
 
 <p align="center">
-  <img src="assets/mdp_architecture.png" width="800"/>
+  <img src="assets/mdp_architecture.png" width="400"/>
 </p>
 Uni-CoT components that requires loss during training are highlighted in pink.
 
