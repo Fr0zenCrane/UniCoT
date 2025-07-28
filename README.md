@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Uni-CoT" width="480"/>
+  <img src="assets/logo.png" alt="Uni-CoT" width="200"/>
 </p>
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
@@ -20,7 +20,7 @@
 <sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
 
 ## Overview
-Chain-of-Thought (CoT) reasoning has shown remarkable success in boosting the performance of Large Language Models (LLMs) on complex text-based tasks by encouraging interpretable, step-by-step problem solving. However, extending this paradigm to multimodal reasoning introduces new challenges. In particular, human cognition in multimodal tasks—especially those involving vision—relies heavily on understanding how visual states evolve over time. Humans naturally infer causality and plan actions based on visual changes, such as object movements, spatial interactions, and transformations, which are crucial in scenarios like physical reasoning, visual planning, and story understanding.
+Chain-of-Thought (CoT) reasoning has significantly enhanced LLM performance on complex text tasks by encouraging interpretable, step-by-step problem solving. However, extending this paradigm to multimodal tasks presents new challenges. In vision-language scenarios, human cognition depends on understanding how visual states evolve over time, inferring causality and planning based on object movements, spatial interactions, and transformations, which are critical for physical reasoning, visual planning, and story comprehension.
 
 To bridge this gap, we introduce the Unified Chain-of-Thought (Uni-CoT) framework, designed to empower Multimodal Large Language Models (MLLMs) to perform structured and interpretable reasoning across both text and vision. Uni-CoT first decomposes a given multimodal task into simple, modular steps, and then processes each step either sequentially or in parallel, as illustrated below. Thus, it enables more systematic and scalable reasoning across modalities. 
 Specifically, the Uni-CoT reasoning pipeline consists of four key components:
@@ -42,7 +42,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 ---
 ## ✅ To-Do: Uni-CoT Roadmap
 
-A list of planned features and enhancements for the **BATI** framework:
+A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 🧠 Reasoning Framework
 - [✅] Release self-check mechanism  
