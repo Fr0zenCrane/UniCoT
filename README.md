@@ -62,10 +62,13 @@ A list of planned features and enhancements for the **BATI** framework:
   <img src="assets/qualitative_results.png" width="800"/>
 
 ### Quantitative Results
-<p align="center">
-  <img src="assets/result_wise.png" width="800"/>
-
-
+|               | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
+|---------------|----------|---------|---------|----------|----------|------------|----------|
+| Janus         | 0.16     | 0.26    | 0.35    | 0.28     | 0.30     | 0.14       | 0.23     |
+| MetaQuery     | 0.56     | 0.55    | 0.62    | 0.49     | 0.63     | 0.41       | 0.55     |
+| Bagel         | 0.76     | **0.69** | <u>0.75</u> | 0.65     | <u>0.75</u> | <u>0.58</u>   | 0.70     |
+| **Ours**      | **0.77** | <u>0.67</u> | <u>0.75</u> | **0.69** | **0.76** | **0.70**   | **0.73** |
+| *GPT4O*       | *0.81*   | *0.71*  | *0.89*  | *0.83*   | *0.79*   | *0.74*     | *0.80*   |
 
 ---
 

@@ -75,6 +75,8 @@ With above design, our training focuses on three core objectives:
 
 We compare the proposed MDP-based UniCoT (BAGEL-MDP) against the traditional long-chain UniCoT reasoning baseline (BAGEL-LC). Both models are trained for 6,000 steps on a dataset of approximately 10,000 samples. Evaluation is conducted on the WISE benchmark, which is specifically designed to assess the reasoning capabilities of Multimodal Large Language Models (MLLMs). As shown below, the MDP-based formulation consistently outperforms the long-chain baseline across all metrics, demonstrating its superior learning efficiency and output quality.
 
-<p align="center">
-  <img src="assets/ab_mdp.png" width="800"/>
-</p>
+|              | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
+|--------------|----------|---------|---------|----------|----------|------------|----------|
+| Bagel-base   | 0.76     | **0.69** | <u>0.75</u> | <u>0.65</u>   | <u>0.75</u>   | <u>0.58</u>     | <u>0.70</u>   |
+| Bagel-LC     | *0.73*   | *0.67*  | <u>0.75</u> | *0.60*   | <u>0.75</u>   | *0.65*     | *0.70*   |
+| **Bagel-MDP**| **0.77** | <u>0.67</u> | <u>0.75</u> | **0.69** | **0.76** | **0.70**   | **0.73** |
