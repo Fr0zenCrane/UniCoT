@@ -59,9 +59,9 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 - [ ] Provide RL (Reinforcement Learning) framework for multimodal reasoning  
 
 ### 📊 Evaluation & Benchmarking
-- [✅] Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark (wise).
-- [ ] Evaluate Uni-CoT on a reasoning-based editing benchmark.
-- [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark.
+- [✅] Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)
+- [ ] Evaluate Uni-CoT on a reasoning-based editing benchmark
+- [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
 
 ---
 
