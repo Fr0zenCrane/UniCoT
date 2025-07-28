@@ -6,7 +6,7 @@
 
 <a href='https://github.com/SAIS-FUXI/projects'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='technical_report.md'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
-<a href='https://huggingface.co'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
 [Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
@@ -100,6 +100,23 @@ pip install flash_attn==2.5.8 --no-build-isolation
 
 ### Model Download
 
+You may directly download the huggingface [checkpoint](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT) or use the following script:
+
+```python
+from huggingface_hub import snapshot_download
+
+save_dir = "models/UniCoT-7B-MoT"
+repo_id = "Fr0zencr4nE/UniCoT-7B-MoT"
+cache_dir = save_dir + "/cache"
+
+snapshot_download(cache_dir=cache_dir,
+  local_dir=save_dir,
+  repo_id=repo_id,
+  local_dir_use_symlinks=False,
+  resume_download=True,
+  allow_patterns=["*.json", "*.safetensors", "*.bin", "*.py", "*.md", "*.txt"],
+)
+```
 
 
 ### Self-check Reasoning
