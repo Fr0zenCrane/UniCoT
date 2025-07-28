@@ -4,6 +4,10 @@
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
+<a href='https://github.com/SAIS-FUXI/projects'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='technical_report.md'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+<a href='https://huggingface.co'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+
 [[Project]](https://github.com/SAIS-FUXI/projects) / [[Report]](technical_report.md) / [[Model]](https://huggingface.co)
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
