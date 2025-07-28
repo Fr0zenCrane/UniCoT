@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Uni-CoT" width="200"/>
+  <img src="assets/logo.png" alt="Uni-CoT" width="400"/>
 </p>
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
 <a href='https://github.com/SAIS-FUXI/projects'><img src='https://img.shields.io/badge/Project-Page-green'></a>
 <a href='technical_report.md'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
-<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
+<a href='https://huggingface.co'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
 [Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
@@ -16,6 +16,10 @@
 [Xiaomeng Yang](https://scholar.google.com/citations?hl=zh-CN&user=7evPWQYAAAAJ)<sup>1</sup>,
 [Zhiyu Tan](https://scholar.google.com/citations?user=XprTQQ8AAAAJ&hl=en)<sup>1,2</sup><sup>+</sup>,
 [Hao Li](https://scholar.google.com/citations?user=pHN-QIwAAAAJ&hl=zh-CN)<sup>1,2</sup><sup>#</sup>,
+
+\* equal contribution + project leader # Corresponding author 
+
+<sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
 
 ## Overview
 Chain-of-Thought (CoT) reasoning has significantly enhanced LLM performance on complex text tasks by encouraging interpretable, step-by-step problem solving. However, extending this paradigm to multimodal tasks presents new challenges. In vision-language scenarios, human cognition depends on understanding how visual states evolve over time, inferring causality and planning based on object movements, spatial interactions, and transformations, which are critical for physical reasoning, visual planning, and story comprehension.
@@ -43,7 +47,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 A major challenge in Uni-CoT learning is the heightened complexity introduced by visual reasoning.
 Each reasoning step involves not only generating explanatory text but also synthesizing a corresponding image. 
-Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 4,900 tokens required for ViT-based representation, totaling nearly 6,000 tokens per step. 
+Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 4,900 tokens required for ViT-based representation, totaling nearly 9,000 tokens per step. 
 This is a significant increase compared to the 512–1,024 tokens typically needed for text-only reasoning, substantially raising the cost of both training and inference. 
 Consequently, when the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
 
@@ -90,10 +94,10 @@ With above design, our training focuses on three core objectives:
 
 ## Comparison
 
-We compare the proposed MDP-based Uni-CoT (BAGEL-MDP) against the traditional long-chain Uni-CoT reasoning baseline (BAGEL-LC). Both models are trained for 6,000 steps on a dataset of approximately 10,000 samples. Evaluation is conducted on the WISE benchmark, which is specifically designed to assess the reasoning capabilities of Multimodal Large Language Models (MLLMs). As shown below, the MDP-based formulation consistently outperforms the long-chain baseline across all metrics, demonstrating its superior learning efficiency and output quality.
+We compare the proposed MDP-based Uni-CoT (Uni-CoT-MDP) against the traditional long-chain Uni-CoT reasoning baseline (Uni-CoT-LC). Both models are trained for 6,000 steps on a dataset of approximately 10,000 samples. Evaluation is conducted on the WISE benchmark, which is specifically designed to assess the reasoning capabilities of Multimodal Large Language Models (MLLMs). As shown below, the MDP-based formulation consistently outperforms the long-chain baseline across all metrics, demonstrating its superior learning efficiency and output quality.
 
 |              | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
 |--------------|----------|---------|---------|----------|----------|------------|----------|
-| Bagel-base   | 0.76     | **0.69** | <u>0.75</u> | <u>0.65</u>   | <u>0.75</u>   | <u>0.58</u>     | <u>0.70</u>   |
-| Bagel-LC     | *0.73*   | *0.67*  | <u>0.75</u> | *0.60*   | <u>0.75</u>   | *0.65*     | *0.70*   |
-| **Bagel-MDP**| **0.77** | <u>0.67</u> | <u>0.75</u> | **0.69** | **0.76** | **0.70**   | **0.73** |
+| Bagel(base)   | **0.76**    | **0.69**   | <u>0.75</u> | <u>0.65</u> | <u>0.75</u> | 0.58        | <u>0.70</u>   |
+| Uni-CoT-LC     | 0.73        | <u>0.67<u> | <u>0.75</u> | 0.60        | <u>0.75</u> | <u>0.65</u> | <u>0.70<u>   |
+| **Uni-CoT-MDP**| <u>0.75</u> | 0.66       | **0.78**    | **0.70**    | **0.78**    | **0.71**    | **0.73** |
