@@ -9,7 +9,7 @@ By decomposing a given task into simple, modular steps and executing them sequen
 
 * Visual planning
 * Geometric and physical reasoning
-* Highly reliable image and video generation/editing
+* Highly reliable image generation/editing
 
 The BATI reasoning pipeline consists of the following stages:
 
@@ -68,12 +68,25 @@ A list of planned features and enhancements for the **BATI** framework:
 ### Self-check Reasoning
 
 
+---
+## Citation
+
+```bibtex
+@misc{BATI,
+  author       = {SAIS-FUXI},
+  title        = {BATI: BAgel-based Unified Chain of Thought Across Text and Image},
+  howpublished = {\url{https://github.com/Fr0zenCrane/BagelCoT}},
+  year         = {2025},
+  note         = {Accessed: 2025-07-28}
+}
+
+```
+---
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=hpcaitech/Open-Sora&type=Date)](https://star-history.com/#hpcaitech/Open-Sora&Date)
+[![Star History Chart]()]()
 
-
-
+---
 ## Acknowledgement
 
 - This project is based on [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made BATI possible.
