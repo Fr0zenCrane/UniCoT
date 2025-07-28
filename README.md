@@ -2,9 +2,21 @@
 
 [[Project]](https://github.com/SAIS-FUXI/projects) / [[Report]](technical_report.md) / [[Model]](https://huggingface.co)
 
+[Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
+[Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
+[Yunqing Sun]()<sup>1</sup><sup>\*</sup>,
+[Tianjiao Li](https://scholar.google.com/citations?hl=zh-CN&user=so6xMg8AAAAJ)<sup>3</sup>,
+[Mengping Yang](https://scholar.google.com/citations?user=yF34LtcAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>,
+[Zhiyu Tan](https://scholar.google.com/citations?user=XprTQQ8AAAAJ&hl=en)<sup>1,2</sup><sup>+</sup>,
+[Hao Li](https://scholar.google.com/citations?user=pHN-QIwAAAAJ&hl=zh-CN)<sup>1,2</sup><sup>#</sup>,
+
+\* equal contribution + project leader # Corresponding author 
+
+<sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
+
 ## Overview
 
-BATI is a Unified Chain-of-Thought (UniCoT) reasoning framework designed to empower Multimodal Large Language Models (MLLMs) to perform complex reasoning across both text and vision modalities.
+BATI is a Unified Chain-of-Thought (UniCoT) reasoning framework designed to empower Multimodal Large Language Models (MLLMs) to perform complex reasoning across both text and vision modalities.        
 By decomposing a given task into simple, modular steps and executing them sequentially or in parallel, BATI aims to enable unified large models to tackle a broad range of multimodal applications, including:
 
 * Visual planning
@@ -84,7 +96,13 @@ A list of planned features and enhancements for the **BATI** framework:
 ---
 ## Star History
 
+<<<<<<< HEAD
+[![Star History Chart](https://api.star-history.com/svg?repos=Fr0zenCrane/BagelCoT&type=Date)](https://star-history.com/#Fr0zenCrane/BagelCoT&Date)
+
+
+=======
 [![Star History Chart]()]()
+>>>>>>> b8f7c2a (update repo)
 
 ---
 ## Acknowledgement
