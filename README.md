@@ -20,24 +20,30 @@
 <sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
 
 ## Overview
-Chain-of-Thought (CoT) reasoning has significantly enhanced LLM performance on complex text tasks by encouraging interpretable, step-by-step problem solving. However, extending this paradigm to multimodal tasks presents new challenges. In vision-language scenarios, human cognition depends on understanding how visual states evolve over time, inferring causality and planning based on object movements, spatial interactions, and transformations, which are critical for physical reasoning, visual planning, and story comprehension.
 
-To bridge this gap, we introduce the Unified Chain-of-Thought (Uni-CoT) framework, designed to empower Multimodal Large Language Models (MLLMs) to perform structured and interpretable reasoning across both text and vision. Uni-CoT first decomposes a given multimodal task into simple, modular steps, and then processes each step either sequentially or in parallel, as illustrated below. Thus, it enables more systematic and scalable reasoning across modalities. 
-Specifically, the Uni-CoT reasoning pipeline consists of four key components:
-1. **Planning**: Decompose the complex task into a sequence of simpler, manageable subtasks.
-2. **Subtask Execution**: Execute each subtask using the unified model with step-by-step reasoning.
-3. **Self-Check**: After completing each subtask, perform a validation check to ensure the intermediate result aligns with the intended goal.
-4. **Final Result**: Aggregate the validated subtask results to generate the final output.
+While Chain-of-Thought (CoT) reasoning has proven effective for complex text tasks, extending it to **multimodal scenarios** introduces new challenges. In visual contexts, human reasoning often depends on understanding how **visual states evolve over time**, e.g., tracking object movements, spatial interactions, and causal transformations. These dynamics are essential for tasks such as **visual planning**, **physical reasoning**, and **story comprehension**.
 
-With these designs, our Uni-CoT framework aims to enable unified large models to tackle a wide range of challenging multimodal applications, including:
-* Highly reliable image generation/editing
-* Visual planning
-* Geometric and physical reasoning
-
+To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown below.
 
 <p align="center">
   <img src="assets/pipeline.png" width="800"/>
 </p>
+
+### 🧠 Reasoning Pipeline
+
+The Uni-CoT framework follows a four-stage modular reasoning process:
+
+1. **Planning**: Decompose the overall task into a sequence of subtasks.
+2. **Subtask Execution**: Solve each subtask with step-by-step multimodal reasoning.
+3. **Self-Check**: Validate intermediate outputs before proceeding.
+4. **Final Aggregation**: Integrate validated results into the final output.
+
+### 🚀 Applications
+
+* 🔍 Visual and physical reasoning
+* 🧩 Visual planning
+* 🎨 Reliable image generation and editing
+* 📖 Multimodal story understanding
 
 ---
 ## ✅ To-Do: Uni-CoT Roadmap
@@ -54,15 +60,15 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 - [ ] Provide RL (Reinforcement Learning) framework for multimodal reasoning  
 
 ### 📊 Evaluation & Benchmarking
-- [✅] Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark, wise.
+- [✅] Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark (wise).
 - [ ] Evaluate Uni-CoT on a reasoning-based editing benchmark.
 - [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark.
 
 ---
 
-## Preliminary Results for Highly Reliable Image Generation
+## Preliminary Results for Reliable Image Generation
 ### Qualitative Results
-<p align="center">
+<p align="left">
   <img src="assets/qualitative_results.png" width="800"/>
 
 ### Quantitative Results
