@@ -121,7 +121,47 @@ snapshot_download(cache_dir=cache_dir,
 
 ### Self-check Reasoning
 
+To perform evaluation using UniCoT-7B-MoT, you need at least one GPU with 80GB or more VRAM. While lower GPU configurations are acceptable, they are not recommended due to potential performance limitations.
 
+To reproduce our results on WISE benchmark, you can use script `run_wise_self_reflection.sh`, you may specify your local checkpoint of UniCoT-7B-MoT and output dir using `--model_path` and `outdir`.
+
+```python
+gpu_num=8
+
+for i in $(seq 0 $((gpu_num-1)));
+do
+    CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection_wise.py \
+        --group_id $i \
+        --group_num $gpu_num \
+        --model_path "Fr0zencr4nE/UniCoT-7B-MoT" \
+        --data_path "./eval/gen/wise/final_data.json" \
+        --outdir "./results" \
+        --cfg_text_scale 4 > process_log_$i.log 2>&1 &
+done
+
+wait
+echo "All background processes finished."
+```
+
+For general inference, prepare your prompts and format them into a `.txt` file, with one prompt per line. , you can find a demonstration of this in the repository as `test_prompts.txt`.
+
+```python
+gpu_num=8
+
+for i in $(seq 0 $((gpu_num-1)));
+do
+    CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection.py \
+        --group_id $i \
+        --group_num $gpu_num \
+        --model_path "Fr0zencr4nE/UniCoT-7B-MoT" \
+        --data_path "./test_prompts.txt" \
+        --outdir "./results" \
+        --cfg_text_scale 4 > process_log_$i.log 2>&1 &
+done
+
+wait
+echo "All background processes finished."
+```
 ---
 ## Citation
 
