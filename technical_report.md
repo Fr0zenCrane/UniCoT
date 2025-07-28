@@ -34,7 +34,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 
 <p align="center">
-  <img src="assets/pipeline.png" width="800"/>
+  <img src="assets/pipeline.png" width="900"/>
 </p>
 
 ---
@@ -48,7 +48,7 @@ This is a significant increase compared to the 512–1,024 tokens typically need
 Consequently, when the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
 
 <p align="center">
-  <img src="assets/motivation.png" width="800"/>
+  <img src="assets/motivation.png" width="900"/>
 </p>
 
 To mitigate the complexity introduced by long multimodal reasoning chains, we reformulate the Uni-CoT process as a Markov Decision Process (MDP), where each step depends solely on the current state. 
@@ -56,7 +56,7 @@ Concretely, we model each reasoning step as a discrete MDP node, which only depe
 This formulation enables the model to focus on learning local transition dynamics between adjacent nodes, rather than capturing dependencies across the entire reasoning chain as shown below. 
 Such a design choice significantly reduces computational overhead and improves training efficiency.
 <p align="center">
-  <img src="assets/mdp_process.png" width="400"/>
+  <img src="assets/mdp_process.png" width="600"/>
 </p>
 
 ---
@@ -73,7 +73,7 @@ Each MDP node is defined by the following components:
 * **Reward ($r_{t}$)**: A textual conclusion or scalar score that quantifies the alignment between the outcome and the task objective.
 
 <p align="center">
-  <img src="assets/mdp_architecture.png" width="400"/>
+  <img src="assets/mdp_architecture.png" width="600"/>
 </p>
 Uni-CoT components that requires loss during training are highlighted in pink.
 

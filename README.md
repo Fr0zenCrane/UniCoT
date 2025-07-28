@@ -27,7 +27,7 @@ While Chain-of-Thought (CoT) reasoning has been proven effective for complex tex
 To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown below.
 
 <p align="center">
-  <img src="assets/pipeline.png" width="800"/>
+  <img src="assets/pipeline.png" width="900"/>
 </p>
 
 ### 🧠 Reasoning Pipeline
