@@ -109,11 +109,6 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ```
 ---
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Fr0zenCrane/BagelCoT&type=Date)](https://star-history.com/#Fr0zenCrane/BagelCoT&Date)
-
----
 ## Acknowledgement
 
 - [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made Uni-CoT possible.
