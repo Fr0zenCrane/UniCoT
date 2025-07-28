@@ -54,18 +54,18 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 🧠 Reasoning Framework
-- ✅ Release self-check mechanism  
-- [ ] Rlease planning and subtask execution mechanism
-- [ ] Develop more fine-grained reasoning strategies  
+✅ Release self-check mechanism   
+[ ] Rlease planning and subtask execution mechanism    
+[ ] Develop more fine-grained reasoning strategies    
 
 ### 🤖 Training Framework
-- [ ] Provide SFT (Supervised Fine-Tuning) framework for multimodal reasoning  
-- [ ] Provide RL (Reinforcement Learning) framework for multimodal reasoning  
+[ ] Provide SFT (Supervised Fine-Tuning) framework for multimodal reasoning    
+[ ] Provide RL (Reinforcement Learning) framework for multimodal reasoning  
 
 ### 📊 Evaluation & Benchmarking
-- ✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)
-- [ ] Evaluate Uni-CoT on a reasoning-based editing benchmark
-- [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
+✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)  
+[ ] Evaluate Uni-CoT on a reasoning-based editing benchmark  
+[ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
 
 ---
 
@@ -74,8 +74,8 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 <p align="left">
   <img src="assets/qualitative_results.png" width="800"/>
 
-### Quantitative Results on WISE
-We first conduct experiments on the WISE dataset to evaluate the reasoning capabilities of our method.
+### Quantitative Results on WISE  
+We first conduct experiments on the [WISE](https://github.com/PKU-YuanGroup/WISE) dataset to evaluate the reasoning capabilities of our method.
 As shown in the table below, our model achieves state-of-the-art (SOTA) performance among existing open-source unified models.
 |               | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
 |---------------|----------|---------|---------|----------|----------|------------|----------|
