@@ -20,8 +20,7 @@
 <sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
 
 ## Overview
-
-While Chain-of-Thought (CoT) reasoning has proven effective for complex text tasks, extending it to **multimodal scenarios** introduces new challenges. In visual contexts, human reasoning often depends on understanding how **visual states evolve over time**, e.g., tracking object movements, spatial interactions, and causal transformations. These dynamics are essential for tasks such as **visual planning**, **physical reasoning**, and **story comprehension**.
+While Chain-of-Thought (CoT) reasoning has proven effective for complex text-based tasks, extending it to multimodal scenarios introduces new challenges. In visual contexts, human reasoning often relies on understanding how visual states evolve over time, such as tracking object movements and spatial interactions. This demands that Multimodal Large Language Models (MLLMs) reason not only at the textual level but also effectively incorporate and interpret visual cues.
 
 To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown below.
 
@@ -31,7 +30,7 @@ To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that ext
 
 ### 🧠 Reasoning Pipeline
 
-The Uni-CoT framework follows a four-stage modular reasoning process:
+The Uni-CoT framework adopts a four-stage modular reasoning process:
 
 1. **Planning**: Decompose the overall task into a sequence of subtasks.
 2. **Subtask Execution**: Solve each subtask with step-by-step multimodal reasoning.
@@ -39,7 +38,7 @@ The Uni-CoT framework follows a four-stage modular reasoning process:
 4. **Final Aggregation**: Integrate validated results into the final output.
 
 ### 🚀 Applications
-
+The Uni-CoT framework aims to solve complex multimodal tasks, including:
 * 🔍 Visual and physical reasoning
 * 🧩 Visual planning
 * 🎨 Reliable image generation and editing
@@ -71,7 +70,7 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 <p align="left">
   <img src="assets/qualitative_results.png" width="800"/>
 
-### Quantitative Results
+### Quantitative Results on Wise
 |               | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
 |---------------|----------|---------|---------|----------|----------|------------|----------|
 | Janus         | 0.16     | 0.26    | 0.35    | 0.28     | 0.30     | 0.14       | 0.23     |
