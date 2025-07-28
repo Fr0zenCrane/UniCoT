@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Uni-CoT" width="200"/>
+  <img src="assets/logo.png" alt="Uni-CoT" width="400"/>
 </p>
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision

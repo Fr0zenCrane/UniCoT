@@ -43,7 +43,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 A major challenge in Uni-CoT learning is the heightened complexity introduced by visual reasoning.
 Each reasoning step involves not only generating explanatory text but also synthesizing a corresponding image. 
-Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 1,369 tokens required for ViT-based representation, totaling nearly 6,000 tokens per step. 
+Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 4,900 tokens required for ViT-based representation, totaling nearly 6,000 tokens per step. 
 This is a significant increase compared to the 512–1,024 tokens typically needed for text-only reasoning, substantially raising the cost of both training and inference. 
 Consequently, when the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
 
