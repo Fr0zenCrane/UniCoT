@@ -116,4 +116,5 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 ---
 ## Acknowledgement
 
-- This project is based on [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made BATI possible.
+- [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made Uni-CoT possible.
+- [WISE](https://github.com/PKU-YuanGroup/WISE) proposed by PKU-YuanGroup. WISE provides a comprehensive benchmark for evaluating text-to-image models on complex semantic understanding and world knowledge integration. By requiring advanced reasoning capabilities, WISE serves as a valuable playground for chain-of-thought (CoT) self-reflection.
