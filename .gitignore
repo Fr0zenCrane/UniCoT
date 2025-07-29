@@ -1,0 +1,9 @@
+wandb
+__pycache__
+.vscode
+*.ipynb_checkpoints
+notebooks
+results*
+test*
+.DS_Store
+*.log
