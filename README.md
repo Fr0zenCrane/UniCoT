@@ -14,7 +14,7 @@
 [Tianjiao Li](https://scholar.google.com/citations?hl=zh-CN&user=so6xMg8AAAAJ)<sup>3</sup>,
 [Mengping Yang](https://scholar.google.com/citations?user=yF34LtcAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>,
 [Xiaomeng Yang](https://scholar.google.com/citations?hl=zh-CN&user=7evPWQYAAAAJ)<sup>1</sup>,
-[Zhiyu Tan](https://github.com/SAIS-FUXI)<sup>1,2</sup><sup>+</sup>,
+[Zhiyu Tan](https://github.com/SAIS-FUXI)<sup>1,2</sup><sup>+#</sup>,
 [Hao Li](https://scholar.google.com/citations?user=pHN-QIwAAAAJ&hl=zh-CN)<sup>1,2</sup><sup>#</sup>,
 
 \* equal contribution + project leader # Corresponding author 
