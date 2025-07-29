@@ -187,7 +187,7 @@ echo "All background processes finished."
 @misc{Uni-CoT,
   author       = {SAIS-FUXI},
   title        = {Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision},
-  howpublished = {\url{https://github.com/Fr0zenCrane/BagelCoT}},
+  howpublished = {\url{https://github.com/Fr0zenCrane/UniCoT}},
   year         = {2025},
   note         = {Accessed: 2025-07-28}
 }
