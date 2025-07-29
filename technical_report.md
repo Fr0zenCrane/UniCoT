@@ -43,17 +43,16 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 ---
 
-## Key Insight
-
-A major challenge in Uni-CoT learning is the heightened complexity introduced by visual reasoning.
-Each reasoning step involves not only generating explanatory text but also synthesizing a corresponding image. 
-Producing a high-quality image via VAE consumes approximately 4,096 tokens, with an additional 4,900 tokens required for ViT-based representation, totaling nearly 9,000 tokens per step. 
-This is a significant increase compared to the 512–1,024 tokens typically needed for text-only reasoning, substantially raising the cost of both training and inference. 
-Consequently, when the reasoning chain grows with multiple image-text pairs, the model struggles to converge and generalize effectively, limiting its performance on multimodal tasks.
+## Methods
+### Key Observation
+We adapt the unified Bagel-7B-MoT model to perform joint text and image generation in support of UniCoT-style multimodal reasoning. As a first step, we fine-tune the model using its native interleaved text-image training paradigm. While this naïve adaptation enables the model to learn basic UniCoT behaviors, we observe significant challenges when scaling to complex reasoning chains involving multiple image-text steps.        
+A primary bottleneck lies in the elevated complexity introduced by visual reasoning. Unlike text-only reasoning, where each step typically consumes 512–1,024 tokens, UniCoT requires generating both a reasoning text and a corresponding image per step. Synthesising Image via VAE-based representation consumes ~4,096 tokens, and encoding the image with a ViT-based representation for understanding incurs an additional ~4,900 tokens, resulting in nearly 9,000 tokens per reasoning step. This substantial overhead significantly increases the computational cost of training and inference. As the reasoning chain grows, the model struggles to converge and generalize, ultimately limiting its performance on complex multimodal tasks.
 
 <p align="center">
   <img src="assets/motivation.png" width="900"/>
 </p>
+
+### Our Solution
 
 To mitigate the complexity introduced by long multimodal reasoning chains, we reformulate the Uni-CoT process as a Markov Decision Process (MDP), where each step depends solely on the current state. 
 Concretely, we model each reasoning step as a discrete MDP node, which only depends on the preceding step and the task instruction. 
@@ -63,13 +62,7 @@ Such a design choice significantly reduces computational overhead and improves t
   <img src="assets/mdp_process.png" width="600"/>
 </p>
 
----
-
-## Details
-
-## Uni-CoT MDP Node Design
-
-Each MDP node is defined by the following components:
+Specifically, each MDP node is defined by the following components:
 
 * **State ($s_t$)**: Current context, refer to last reasoning step, including both text and images.
 * **Action ($a_t$)**: A hybrid operation that involves generating editing instructions and performing corresponding image edits.
@@ -81,8 +74,7 @@ Each MDP node is defined by the following components:
 </p>
 Uni-CoT components that requires loss during training are highlighted in pink.
 
-
-## Training Strategy
+### Training Strategy
 
 With above design, our training focuses on three core objectives:
 
