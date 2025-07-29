@@ -38,7 +38,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 
 <p align="center">
-  <img src="assets/pipeline.png" width="900"/>
+  <img src="../assets/pipeline.png" width="900"/>
 </p>
 
 ---
@@ -49,7 +49,7 @@ We adapt the unified Bagel-7B-MoT model to perform joint text and image generati
 A primary bottleneck lies in the elevated complexity introduced by visual reasoning. Unlike text-only reasoning, where each step typically consumes 512–1,024 tokens, UniCoT requires generating both a reasoning text and a corresponding image per step. Synthesising Image via VAE-based representation consumes ~4,096 tokens, and encoding the image with a ViT-based representation for understanding incurs an additional ~4,900 tokens, resulting in nearly 9,000 tokens per reasoning step. This substantial overhead significantly increases the computational cost of training and inference. As the reasoning chain grows, the model struggles to converge and generalize, ultimately limiting its performance on complex multimodal tasks.
 
 <p align="center">
-  <img src="assets/motivation.png" width="900"/>
+  <img src="../assets/motivation.png" width="900"/>
 </p>
 
 ### Our Solution
@@ -59,7 +59,7 @@ Concretely, we model each reasoning step as a discrete MDP node, which only depe
 This formulation enables the model to focus on learning local transition dynamics between adjacent nodes, rather than capturing dependencies across the entire reasoning chain as shown below. 
 Such a design choice significantly reduces computational overhead and improves training efficiency.
 <p align="center">
-  <img src="assets/mdp_process.png" width="600"/>
+  <img src="../assets/mdp_process.png" width="600"/>
 </p>
 
 Specifically, each MDP node is defined by the following components:
@@ -70,7 +70,7 @@ Specifically, each MDP node is defined by the following components:
 * **Reward ($r_{t}$)**: A textual conclusion or scalar score that quantifies the alignment between the outcome and the task objective.
 
 <p align="center">
-  <img src="assets/mdp_architecture.png" width="600"/>
+  <img src="../assets/mdp_architecture.png" width="600"/>
 </p>
 Uni-CoT components that requires loss during training are highlighted in pink.
 
