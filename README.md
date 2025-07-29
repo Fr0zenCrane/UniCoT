@@ -135,7 +135,7 @@ snapshot_download(cache_dir=cache_dir,
 
 ### Self-check Reasoning
 
-To perform evaluation using UniCoT-7B-MoT, you need at least one GPU with 80GB or more VRAM. While lower GPU configurations are acceptable, they are not recommended due to potential performance limitations.
+To perform evaluation using UniCoT-7B-MoT, you need at least one GPU with 40GB or more VRAM. While lower GPU configurations are acceptable, they are not recommended due to potential performance limitations.
 
 #### Evaluation
 To reproduce our results on WISE benchmark, you can use script `./scripts/run_wise_self_reflection.sh`, you may specify your local checkpoint of UniCoT-7B-MoT and output dir using `--model_path` and `outdir`.
