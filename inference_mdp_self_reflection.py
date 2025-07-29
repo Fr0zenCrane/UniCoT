@@ -543,7 +543,7 @@ if __name__ == "__main__":
 
     device_map = infer_auto_device_map(
         model,
-        max_memory={i: "80GiB" for i in range(torch.cuda.device_count())}, # CFFF A100 has 80GB VRAM
+        max_memory={i: "80GiB" for i in range(torch.cuda.device_count())}, # A100 has 80GB VRAM
         no_split_module_classes=["Bagel", "Qwen2MoTDecoderLayer"],
     )
     print(device_map)

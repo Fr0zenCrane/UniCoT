@@ -5,7 +5,7 @@
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
 <a href='https://sais-fuxi.github.io/projects/uni-cot/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
-<a href='technical_report.md'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
+<a href='./docs/technical_report.md'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
 <a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue'></a>
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
@@ -116,6 +116,8 @@ pip install flash_attn==2.5.8 --no-build-isolation
 
 You may directly download the huggingface [checkpoint](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT) or use the following script:
 
+*Note: Due to our internet speed limitation, the checkpoint of UniCoT-7B-MoT is still uploadding. This should be finished in a day.*
+
 ```python
 from huggingface_hub import snapshot_download
 
@@ -138,7 +140,7 @@ snapshot_download(cache_dir=cache_dir,
 To perform evaluation using UniCoT-7B-MoT, you need at least one GPU with 80GB or more VRAM. While lower GPU configurations are acceptable, they are not recommended due to potential performance limitations.
 
 #### Evaluation
-To reproduce our results on WISE benchmark, you can use script `run_wise_self_reflection.sh`, you may specify your local checkpoint of UniCoT-7B-MoT and output dir using `--model_path` and `outdir`.
+To reproduce our results on WISE benchmark, you can use script `./scripts/run_wise_self_reflection.sh`, you may specify your local checkpoint of UniCoT-7B-MoT and output dir using `--model_path` and `outdir`.
 
 ```python
 gpu_num=8
@@ -159,7 +161,7 @@ echo "All background processes finished."
 ```
 
 #### Inference
-For general inference, prepare your prompts and format them into a `.txt` file, with one prompt per line. , you can find a demonstration of this in the repository as `test_prompts.txt`.
+For general inference, prepare your prompts by formatting them into a `.txt` file, with one prompt per line, with one prompt per line, you can find a demonstration of this in the repository as `test_prompts.txt`. Once your prompts are ready, use the script `./scripts/run_user_self_reflection.sh` to generate images from your prompts with the added benefit of the self-reflection mechanism.
 
 ```python
 gpu_num=8
