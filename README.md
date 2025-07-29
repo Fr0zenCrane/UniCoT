@@ -116,8 +116,6 @@ pip install flash_attn==2.5.8 --no-build-isolation
 
 You may directly download the huggingface [checkpoint](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT) or use the following script:
 
-*Note: Due to our internet speed limitation, the checkpoint of UniCoT-7B-MoT is still uploadding. This should be finished in a day.*
-
 ```python
 from huggingface_hub import snapshot_download
 
