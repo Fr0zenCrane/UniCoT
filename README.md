@@ -21,7 +21,7 @@
 
 <sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University
 
-<div align="center">
+<div>
 <a href="mailto:qinluozheng@sais.com.cn">qinluozheng@sais.com.cn</a>&emsp;
 <a href="mailto:gongjia@sais.com.cn">gongjia@sais.com.cn</a>&emsp;
 <a href="mailto:sunyuqing@sais.com.cn">sunyuqing@sais.com.cn</a>
