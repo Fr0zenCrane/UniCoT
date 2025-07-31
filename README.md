@@ -102,7 +102,7 @@ The results in the table below demonstrate that our model effectively refines th
 | **Uni-CoT**   | **0.76**<u>+</u>0.009 | **0.70**<u>+</u>0.0256 | **0.76**<u>+</u>0.006 | **0.73**<u>+</u>0.021 | **0.81**<u>+</u>0.018 | **0.73**<u>+</u>0.020   | **0.75**<u>+</u>0.013 |
 | *GPT4O*       | *0.81*     | *0.71*       | *0.89*      | *0.83*     | *0.79*      | *0.74*      | *0.80*       |
 
-### Quantitative Results on Kris 
+### Quantitative Results on [Kris](https://github.com/mercurystraw/Kris_Bench) 
 We also achieve state-of-the-art (SOTA) performance on the KRIS benchmark, even surpassing the closed-source model Gemini2.0.
 | Model           | Attribute Perception | Spatial Perception | Temporal Perception | Factual Avg | Social Science | Natural Science | Conceptual Avg | Logical Reasoning | Instruction Decomposition | Procedural Avg | Overall Score |
 |----------------|----------------------|---------------------|----------------------|-------------|----------------|------------------|----------------|--------------------|-----------------------------|----------------|----------------|
@@ -214,3 +214,4 @@ echo "All background processes finished."
 
 - [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made Uni-CoT possible.
 - [WISE](https://github.com/PKU-YuanGroup/WISE) proposed by PKU-YuanGroup. WISE provides a comprehensive benchmark for evaluating text-to-image models on complex semantic understanding and world knowledge integration. By requiring advanced reasoning capabilities, WISE serves as a valuable playground for chain-of-thought (CoT) self-reflection.
+- [KRIS-Bench](https://github.com/mercurystraw/Kris_Bench) proposed by Stepfun. KRIS-Bench serves as a comprehensive benchmark for evaluating both instruction-based image editing and knowledge-guided reasoning capabilities.
