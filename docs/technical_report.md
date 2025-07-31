@@ -88,6 +88,8 @@ With above design, our training focuses on three core objectives:
 
 We compare the proposed MDP-based Uni-CoT (Uni-CoT-MDP) against the traditional long-chain Uni-CoT reasoning baseline (Uni-CoT-LC). Both models are trained for 6,000 steps on a dataset of approximately 10,000 samples. Evaluation is conducted on the [WISE](https://github.com/PKU-YuanGroup/WISE) benchmark, which is specifically designed to assess the reasoning capabilities of Multimodal Large Language Models (MLLMs). As shown below, the MDP-based formulation consistently outperforms the long-chain baseline across all metrics, demonstrating its superior learning efficiency and output quality.
 
+It is important to note that below experiments were conducted under constrained resources; therefore, Uni-CoT-MDP should not be considered our final model.
+
 |              | Culture↑ | Time↑   | Space↑  | Biology↑ | Physics↑ | Chemistry↑ | Overall↑ |
 |--------------|----------|---------|---------|----------|----------|------------|----------|
 | Bagel(base)   | **0.76**    | **0.69**   | <u>0.75</u> | <u>0.65</u> | <u>0.75</u> | 0.58        | <u>0.70</u>   |
