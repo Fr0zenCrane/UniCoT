@@ -71,7 +71,7 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 📊 Evaluation & Benchmarking
 ✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)  
-✅ Evaluate Uni-CoT on a reasoning-based editing benchmark  
+✅ Evaluate Uni-CoT on a reasoning-based editing benchmark [KRIS-Bench](https://github.com/mercurystraw/Kris_Bench)
 [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
 
 ---
@@ -102,7 +102,7 @@ The results in the table below demonstrate that our model effectively refines th
 | **Uni-CoT**   | **0.76**±0.009 | **0.70**±0.0256 | **0.76**±0.006 | **0.73**±0.021 | **0.81**±0.018 | **0.73**±0.020   | **0.75**±0.013 |
 | *GPT4O*       | *0.81*     | *0.71*       | *0.89*      | *0.83*     | *0.79*      | *0.74*      | *0.80*       |
 
-### Quantitative Results on [Kris](https://github.com/mercurystraw/Kris_Bench) 
+### Quantitative Results on [KRIS Bench](https://github.com/mercurystraw/Kris_Bench) 
 We also achieve state-of-the-art (SOTA) performance on the KRIS benchmark, even surpassing the closed-source model Gemini2.0.
 | Model           | Attribute Perception | Spatial Perception | Temporal Perception | Factual Avg | Social Science | Natural Science | Conceptual Avg | Logical Reasoning | Instruction Decomposition | Procedural Avg | Overall Score |
 |----------------|----------------------|---------------------|----------------------|-------------|----------------|------------------|----------------|--------------------|-----------------------------|----------------|----------------|
