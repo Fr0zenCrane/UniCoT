@@ -71,7 +71,7 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 📊 Evaluation & Benchmarking
 ✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)  
-✅ Evaluate Uni-CoT on a reasoning-based editing benchmark [KRIS-Bench](https://github.com/mercurystraw/Kris_Bench)
+✅ Evaluate Uni-CoT on a reasoning-based editing benchmark [KRIS Bench](https://github.com/mercurystraw/Kris_Bench)
 [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
 
 ---
