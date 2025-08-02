@@ -77,10 +77,14 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ---
 
-## Preliminary Results for Reliable Image Generation
-### Qualitative Results
+## Preliminary Results
+### Qualitative Results for Image Generation
 <p align="left">
-  <img src="assets/qualitative_results.png" width="800"/>
+  <img src="assets/qualitative_results_generation.png" width="800"/>
+
+### Qualitative Results for Image Editing
+<p align="left">
+  <img src="assets/qualitative_results_editing.png" width="800"/>
 
 ### Quantitative Results on WISE  
 We first conduct experiments on the [WISE](https://github.com/PKU-YuanGroup/WISE) dataset to evaluate the reasoning capabilities of our method.
