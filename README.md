@@ -57,6 +57,14 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 * 📖 Multimodal story understanding
 
 ---
+
+## 🔥 News
+
+- ✅ **2025.07.29** &mdash; We released **UniCoT-7B-MoT**, which extends Bagel-7B-MoT model to perform text-to-image generation with self-check (self-reflection) reasoning mechanism.
+- ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](#) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
+- 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
+---
+
 ## ✅ To-Do: Uni-CoT Roadmap
 
 A list of planned features and enhancements for the **Uni-CoT** framework:
