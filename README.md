@@ -213,12 +213,14 @@ echo "All background processes finished."
 ## Citation
 
 ```bibtex
-@misc{Uni-CoT,
-  author       = {SAIS-FUXI},
-  title        = {Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision},
-  howpublished = {\url{https://github.com/Fr0zenCrane/UniCoT}},
-  year         = {2025},
-  note         = {Accessed: 2025-07-28}
+@misc{qin2025unicot,
+      title={Uni-cot: Towards Unified Chain-of-Thought Reasoning Across Text and Vision}, 
+      author={Luozheng Qin and Jia Gong and Yuqing Sun and Tianjiao Li and Mengping Yang and Xiaomeng Yang and Chao Qu and Zhiyu Tan and Hao Li},
+      year={2025},
+      eprint={2508.05606},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2508.05606}, 
 }
 
 ```
