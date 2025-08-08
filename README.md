@@ -73,8 +73,8 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 ### 🧠 Reasoning Framework
 ✅ Release Micro-CoT Reasoning Machnism: self-check mechanism.   
 [ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
-[ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
-[ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
+[ ] Release Macro-CoT Reasoning Machnism: parallel decomposition mechanism.   
+[ ] Release Macro-CoT Reasoning Machnism: progressive refinement mechanism.   
 
 
 ### 🤖 Training Framework
@@ -233,3 +233,5 @@ echo "All background processes finished."
 - [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made Uni-CoT possible.
 - [WISE](https://github.com/PKU-YuanGroup/WISE) proposed by PKU-YuanGroup. WISE provides a comprehensive benchmark for evaluating text-to-image models on complex semantic understanding and world knowledge integration. By requiring advanced reasoning capabilities, WISE serves as a valuable playground for chain-of-thought (CoT) self-reflection.
 - [KRIS-Bench](https://github.com/mercurystraw/Kris_Bench) proposed by Stepfun. KRIS-Bench serves as a comprehensive benchmark for evaluating both instruction-based image editing and knowledge-guided reasoning capabilities for unified models.
+- [RISE-Bench](https://github.com/PhoenixZ810/RISEBench) proposed by Shanghai AI Lab. RISE-Bench serves as a comprehensive benchmark for reasoning-informed visual editing. RISEBench focuses on four key reasoning types: Temporal, Causal, Spatial, and Logical Reasoning.
+
