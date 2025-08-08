@@ -32,28 +32,29 @@
 ## Overview
 While Chain-of-Thought (CoT) reasoning has been proven effective for complex text-based tasks, extending it to multimodal scenarios introduces new challenges. In visual contexts, human reasoning often relies on understanding how visual states evolve over time, such as tracking object movements and spatial interactions. This demands that Multimodal Large Language Models (MLLMs) reason not only at the textual level but also effectively incorporate and interpret visual cues.
 
-To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown below. More details refer to [Technical report](./docs/technical_report.md).
+To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown below.
 
 *Note: We would like to thank the [Bagel team](https://github.com/ByteDance-Seed/Bagel) for integrating strong text and image generation capabilities into a single model, which enables Uni-CoT to be implemented elegantly at current time.*
 
 <p align="center">
-  <img src="assets/pipeline.png" width="900"/>
+  <img src="assets/teaser.png" width="900"/>
 </p>
 
 ### 🧠 Reasoning Pipeline
+<p align="center">
+  <img src="assets/pipeline.png" width="900"/>
+</p>
+As illustrated in the figure below, the Uni-CoT framework adopts a two-level hierarchical reasoning architecture:  
 
-The Uni-CoT framework adopts a four-stage modular reasoning process:
+1. **Macro-Level CoT**: Decomposes a complex task into simpler subtasks and synthesizes their outcomes to derive the final answer. We design three planning strategies for different scenarios: *Sequential Decomposition Mechanism* for causal, step-by-step planning; *Parallel Decomposition Mechanism* for collaborative, multi-branch planning; *Progressive Refinement Mechanism* for unknown or highly complex scenarios requiring iterative exploration.  
 
-1. **Planning**: Decompose the overall task into a sequence of subtasks.
-2. **Subtask Execution**: Solve each subtask with step-by-step multimodal reasoning.
-3. **Self-Check**: Validate intermediate outputs before proceeding.
-4. **Final Aggregation**: Integrate validated results into the final output.
+2. **Micro-Level CoT**: Focuses on executing individual subtasks while filtering out irrelevant information. We incorporate a *Self-Check (Self-Reflection) Mechanism* to ensure stable and high-quality results in each subtask.
 
 ### 🚀 Applications
 The Uni-CoT framework aims to solve complex multimodal tasks, including:
+* 🎨 Reliable image generation and editing
 * 🔍 Visual and physical reasoning
 * 🧩 Visual planning
-* 🎨 Reliable image generation and editing
 * 📖 Multimodal story understanding
 
 ---
@@ -61,7 +62,7 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 ## 🔥 News
 
 - ✅ **2025.07.29** &mdash; We released **UniCoT-7B-MoT**, which extends Bagel-7B-MoT model to perform text-to-image generation with self-check (self-reflection) reasoning mechanism.
-- ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](#) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
+- ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
 - 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
 ---
 
@@ -70,9 +71,11 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 🧠 Reasoning Framework
-✅ Release self-check mechanism   
-[ ] Rlease planning and subtask execution mechanism    
-[ ] Develop more fine-grained reasoning strategies    
+✅ Release Micro-CoT Reasoning Machnism: self-check mechanism.   
+[ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
+[ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
+[ ] Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
+
 
 ### 🤖 Training Framework
 [ ] Provide SFT (Supervised Fine-Tuning) framework for multimodal reasoning    
@@ -80,7 +83,7 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 
 ### 📊 Evaluation & Benchmarking
 ✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)  
-✅ Evaluate Uni-CoT on a reasoning-based editing benchmark [KRIS Bench](https://github.com/mercurystraw/Kris_Bench)    
+✅ Evaluate Uni-CoT on reasoning-based image editing benchmarks: [KRIS Bench](https://github.com/mercurystraw/Kris_Bench) and [RISE Bench](https://github.com/PhoenixZ810/RISEBench)   
 [ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
 
 ---

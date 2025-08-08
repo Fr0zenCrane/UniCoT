@@ -39,7 +39,7 @@ With these designs, our Uni-CoT framework aims to enable unified large models to
 
 
 <p align="center">
-  <img src="../assets/pipeline.png" width="900"/>
+  <img src="../assets/teaser.png" width="900"/>
 </p>
 
 ---
