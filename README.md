@@ -44,7 +44,7 @@ To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that ext
 <p align="center">
   <img src="assets/pipeline.png" width="900"/>
 </p>
-As illustrated in the figure below, the Uni-CoT framework adopts a two-level hierarchical reasoning architecture:  
+As illustrated in the figure above, the Uni-CoT framework adopts a two-level hierarchical reasoning architecture:  
 
 1. **Macro-Level CoT**: Decomposes a complex task into simpler subtasks and synthesizes their outcomes to derive the final answer. We design three planning strategies for different scenarios: *Sequential Decomposition Mechanism* for causal, step-by-step planning; *Parallel Decomposition Mechanism* for collaborative, multi-branch planning; *Progressive Refinement Mechanism* for unknown or highly complex scenarios requiring iterative exploration.  
 
