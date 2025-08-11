@@ -29,7 +29,7 @@ To bridge this gap, we introduce the Unified Chain-of-Thought (Uni-CoT) framewor
 Specifically, the Uni-CoT reasoning pipeline consists of four key components:
 1. **Planning**: Decompose the complex task into a sequence of simpler, manageable subtasks.
 2. **Subtask Execution**: Execute each subtask using the unified model with step-by-step reasoning.
-3. **Self-Check**: After completing each subtask, perform a validation check to ensure the intermediate result aligns with the intended goal.
+3. **Self-Reflection**: After completing each subtask, perform a validation check to ensure the intermediate result aligns with the intended goal.
 4. **Final Result**: Aggregate the validated subtask results to generate the final output.
 
 With these designs, our Uni-CoT framework aims to enable unified large models to tackle a wide range of challenging multimodal applications, including:
