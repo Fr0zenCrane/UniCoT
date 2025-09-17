@@ -61,7 +61,7 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 
 ## 🔥 News
 
-- ✅ **2025.07.29** &mdash; We released **UniCoT-7B-MoT**, which extends Bagel-7B-MoT model to perform text-to-image generation with self-reflection reasoning mechanism.
+- ✅ **2025.07.29** &mdash; We released **UniCoT-7B-MoT v0.1** on [Huggingface](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT), which extends Bagel-7B-MoT model to perform text-to-image generation with self-reflection reasoning mechanism.
 - ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
 - 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
 ---
