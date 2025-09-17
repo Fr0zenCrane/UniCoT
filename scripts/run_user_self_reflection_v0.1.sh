@@ -2,7 +2,7 @@ gpu_num=8
 
 for i in $(seq 0 $((gpu_num-1)));
 do
-    CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection.py \
+    CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection_v0.1.py \
         --group_id $i \
         --group_num $gpu_num \
         --model_path "Fr0zencr4nE/UniCoT-7B-MoT" \
