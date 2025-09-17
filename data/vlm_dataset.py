@@ -22,7 +22,7 @@ class SftJSONLIterableDataset(DistributedIterableDataset):
         self, dataset_name, transform, tokenizer, frame_sampler, 
         jsonl_path_list, data_dir_list, num_used_data, 
         local_rank=0, world_size=1, num_workers=8, data_status=None, 
-        shuffle_lines=False, shuffle_seed=0,
+        shuffle_lines=False, shuffle_seed=0, think_drop=0.,
     ):
         """
         jsonl_path_list: list of jsonl file paths
@@ -41,6 +41,11 @@ class SftJSONLIterableDataset(DistributedIterableDataset):
             shuffle_lines, 
             shuffle_seed,
         )
+        if think_drop < 0:
+            self.think_drop = 0.
+        else:
+            self.think_drop = think_drop
+            
         self.set_epoch()
 
     def get_data_paths(
@@ -63,6 +68,20 @@ class SftJSONLIterableDataset(DistributedIterableDataset):
             raw_data = raw_data[:num_data_point]
             data_paths.extend([(json_data, image_dir) for json_data in raw_data])
         return data_paths
+
+    # Implement the think drop strategy by qinluozheng@SAIS 2025.8.17
+    def _apply_think_drop(self, data):
+        # check where is think text 
+        for i in range(len(data["conversations"])):
+            if data["conversations"][i]["from"] == "think":
+                if random.random() < self.think_drop:
+                    data["conversations"].pop(i) # dropped
+                else:
+                    data["conversations"][i]["from"] = "gpt" # preserve and calculate ce loss
+
+                break # completed
+
+        return data
 
     def change_format(self, data, num_images):
         elements = []
@@ -116,6 +135,7 @@ class SftJSONLIterableDataset(DistributedIterableDataset):
 
                 try:
                     data_item = json.loads(data)
+                    data_item = self._apply_think_drop(data_item)
                     raw_images = None
                     if 'image' in data_item:
                         if type(data_item['image']) == list:
