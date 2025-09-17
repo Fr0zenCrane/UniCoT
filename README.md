@@ -12,7 +12,7 @@
 [Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
 [Yuqing Sun](https://scholar.google.com/citations?hl=zh-CN&user=zR6eHu0AAAAJ)<sup>1</sup><sup>\*</sup>,
 [Tianjiao Li](https://scholar.google.com/citations?hl=zh-CN&user=so6xMg8AAAAJ)<sup>3</sup>,
-[Haoyu Pan](https://github.com/Harrypen)<sup>1</sup>,
+[Haoyu Pan](https://openreview.net/profile?id=~Haoyu_Pan3)<sup>1</sup>,
 [Mengping Yang](https://scholar.google.com/citations?user=yF34LtcAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>,
 [Xiaomeng Yang](https://scholar.google.com/citations?hl=zh-CN&user=7evPWQYAAAAJ)<sup>1</sup>,
 [Chao Qu](https://scholar.google.com/citations?hl=en&user=DI2NyPsAAAAJ)<sup>4</sup>,
