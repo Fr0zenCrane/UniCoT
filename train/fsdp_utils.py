@@ -1,8 +1,8 @@
 # Copyright 2025 Bytedance Ltd. and/or its affiliates.
 # SPDX-License-Identifier: Apache-2.0
 
-import functools
 import os
+import functools
 
 import torch
 import torch.distributed as dist
@@ -17,7 +17,7 @@ from torch.distributed.fsdp import (
     FullStateDictConfig,
     StateDictType,
 )
-from torch.distributed.fsdp.wrap import transformer_auto_wrap_policy
+from torch.distributed.fsdp.wrap import transformer_auto_wrap_policy, lambda_auto_wrap_policy, _or_policy
 from safetensors.torch import load_file, save_file
 
 from modeling.bagel.modeling_utils import MLPconnector, TimestepEmbedder, PositionEmbedding
@@ -81,6 +81,130 @@ def fsdp_wrapper(original_model, fsdp_config, ignored_modules=[]):
         cpu_offload=CPUOffload(offload_params=fsdp_config.cpu_offload),
         device_mesh=device_mesh,
     )
+
+
+# qinluozheng@SAIS: modified fsdp wrapper for achieving LoRA finetuning
+#                   special thanks to https://zhuanlan.zhihu.com/p/694288870
+def fsdp_with_lora_wrapper(original_model, fsdp_config, ignored_modules=[]):
+    if fsdp_config.sharding_strategy == 'HYBRID_SHARD':
+        device_mesh = init_device_mesh(
+            "cuda", 
+            mesh_shape=(fsdp_config.num_replicate, fsdp_config.num_shard),
+            mesh_dim_names=("replicate", "shard")
+        )
+    else:
+        device_mesh = None
+
+    def lambda_policy_fn(module):
+        if (
+            len(list(module.named_children())) == 0
+            and getattr(module, "weight", None) is not None
+            and module.weight.requires_grad
+        ):
+            return True
+
+        return False
+
+    lambda_policy = functools.partial(lambda_auto_wrap_policy, 
+            lambda_fn=lambda_policy_fn) # LoRA module wrapper
+    transformer_wrap_policy = functools.partial(transformer_auto_wrap_policy, # Base model wrapper
+            transformer_layer_cls={
+                Qwen2DecoderLayer,
+                Qwen2MoEDecoderLayer,
+                Qwen2MoTDecoderLayer,
+                SiglipEncoderLayer,
+                SiglipVisionTransformer,
+                MLPconnector,
+                TimestepEmbedder,
+                PositionEmbedding,
+            },
+        )
+    auto_wrap_policy = functools.partial(_or_policy, 
+            policies=[lambda_policy, transformer_wrap_policy])
+
+    return FSDP(
+        original_model,
+        auto_wrap_policy=auto_wrap_policy,
+        ignored_modules=ignored_modules,
+        mixed_precision=MixedPrecision(
+            param_dtype=torch.bfloat16,
+            reduce_dtype=torch.bfloat16,
+            buffer_dtype=torch.bfloat16,
+        ),
+        device_id=dist.get_rank() % torch.cuda.device_count(),
+        sharding_strategy=ShardingStrategy[fsdp_config.sharding_strategy],
+        backward_prefetch=BackwardPrefetch[fsdp_config.backward_prefetch],
+        cpu_offload=CPUOffload(offload_params=fsdp_config.cpu_offload),
+        device_mesh=device_mesh,
+    )
+
+
+class FSDPCheckpoint:
+    @staticmethod
+    def fsdp_save_ckpt(
+        ckpt_dir, 
+        train_steps, 
+        model, 
+        ema_model, 
+        optimizer, 
+        scheduler, 
+        data_status,
+        logger, 
+        fsdp_config,
+    ):
+        save_path = os.path.join(ckpt_dir, f"{train_steps:07d}")
+        os.makedirs(save_path, exist_ok=True)
+        logger.info(f"Saving checkpoint to {save_path}.")
+
+        if ema_model is not None:
+            with FSDP.state_dict_type(
+                ema_model,
+                StateDictType.FULL_STATE_DICT,
+                FullStateDictConfig(rank0_only=True, offload_to_cpu=True),
+            ):
+                ema_state_dict = ema_model.state_dict().cpu().clone().detach()
+                if dist.get_rank() == 0:
+                    save_file(ema_state_dict, os.path.join(save_path, "ema.safetensors"))
+
+        with FSDP.state_dict_type(
+            model,
+            StateDictType.FULL_STATE_DICT,
+            FullStateDictConfig(rank0_only=True, offload_to_cpu=True),
+        ):
+            print(type(model))
+            model_state_dict = model.state_dict().cpu().clone().detach()
+            if dist.get_rank() == 0:
+                save_file(model_state_dict, os.path.join(save_path, "model.safetensors"))
+
+        with FSDP.state_dict_type(model, StateDictType.LOCAL_STATE_DICT):
+            if fsdp_config.sharding_strategy == "FULL_SHARD":
+                shard_index = dist.get_rank()
+                total_shards = dist.get_world_size()
+            elif fsdp_config.sharding_strategy == "HYBRID_SHARD":
+                shard_index = dist.get_rank() % fsdp_config.num_shard
+                total_shards = fsdp_config.num_shard
+            else:
+                raise NotImplementedError
+
+            optimizer_save_path = os.path.join(
+                save_path, f"optimizer.{shard_index:05d}-of-{total_shards:05d}.pt"
+            )
+            if fsdp_config.sharding_strategy == "FULL_SHARD":
+                torch.save(optimizer.state_dict().cpu().clone().detach(), optimizer_save_path)
+            elif fsdp_config.sharding_strategy == "HYBRID_SHARD":
+                if dist.get_rank() < fsdp_config.num_shard:
+                    torch.save(optimizer.state_dict().cpu().clone().detach(), optimizer_save_path)
+            else:
+                raise NotImplementedError
+
+        if dist.get_rank() == 0 and scheduler is not None:
+            torch.save(scheduler.state_dict(), os.path.join(save_path, "scheduler.pt"))
+
+        if dist.get_rank() == 0 and data_status is not None:
+            torch.save(data_status, os.path.join(save_path, "data_status.pt"))
+
+        dist.barrier()
+        return
 
 
 class FSDPCheckpoint:

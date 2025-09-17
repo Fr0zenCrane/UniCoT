@@ -1,16 +1,19 @@
 # Copyright 2025 Bytedance Ltd. and/or its affiliates.
 # SPDX-License-Identifier: Apache-2.0
 
-import functools
+
 import os
 import sys
 path = os.getcwd()
 sys.path.append(path)
 import wandb
 import yaml
-from copy import deepcopy
-from dataclasses import dataclass, field
+import functools
+
 from time import time
+from dataclasses import dataclass, field
+
+from peft import LoraConfig, get_peft_model
 
 import torch
 import torch.distributed as dist
@@ -35,8 +38,7 @@ from modeling.bagel import (
 from modeling.qwen2 import Qwen2Tokenizer
 from train.train_utils import create_logger, get_latest_ckpt
 from train.fsdp_utils import (
-    FSDPCheckpoint, FSDPConfig, grad_checkpoint_check_fn, fsdp_wrapper, 
-    fsdp_ema_setup, fsdp_ema_update,
+    FSDPCheckpoint, FSDPConfig, grad_checkpoint_check_fn, fsdp_with_lora_wrapper
 )
 
 
@@ -340,6 +342,19 @@ class TrainingArguments:
         default=False,
         metadata={"help": "Enable FLEX (flash-ext friendly) packing algorithm for sequence data."}
     )
+    # --- LoRA config hyper-parameter by qinluozheng@SAIS ---
+    lora_rank: int = field(
+        default=64,
+        metadata={"help": "Specified low rank number of the LoRA module"}
+    )
+    lora_alpha: int = field(
+        default=128,
+        metadata={"help": "scaling factors of the LoRA parameters, typically twice of the LoRA rank"}
+    )
+    lora_target_modules: str = field(
+        default=None,
+        metadata={"help": "modules of base model where LoRA is applied."}
+    )
 
 
 def main():
@@ -465,15 +480,10 @@ def main():
     if training_args.freeze_vae and training_args.visual_gen:
         for param in vae_model.parameters():
             param.requires_grad = False
-    if training_args.freeze_llm:
-        model.language_model.eval()
-        for param in model.language_model.parameters():
-            param.requires_grad = False
-    if training_args.freeze_vit and training_args.visual_und:
-        model.vit_model.eval()
-        for param in model.vit_model.parameters():
-            param.requires_grad = False
-
+    # freeze any param in base model since we use lora fine-tuning
+    for param in model.parameters():
+        param.requires_grad = False
+    
     # Setup FSDP and load pretrained model:
     fsdp_config = FSDPConfig(
         sharding_strategy=training_args.sharding_strategy,
@@ -482,12 +492,20 @@ def main():
         num_replicate=training_args.num_replicate,
         num_shard=training_args.num_shard,
     )
-    ema_model = deepcopy(model)
-    model, ema_model = FSDPCheckpoint.try_load_ckpt(
-        resume_from, logger, model, ema_model, resume_from_ema=finetune_from_ema
+    model, _ = FSDPCheckpoint.try_load_ckpt(
+        resume_from, logger, model, None, resume_from_ema=finetune_from_ema
     )
-    ema_model = fsdp_ema_setup(ema_model, fsdp_config)
-    fsdp_model = fsdp_wrapper(model, fsdp_config)
+    peft_config = LoraConfig(
+        r=training_args.lora_rank,
+        lora_alpha=training_args.lora_alpha, # X + lora_alpha/lora_rank * AB
+        task_type=None,
+        target_modules=["q_proj", "v_proj", "q_proj_moe_gen", "v_proj_moe_gen," "gate_proj", "up_proj", "down_proj"] if training_args.lora_target_modules is None else training_args.lora_target_modules.split(","), # optionally indicate target modules
+    )
+    model = get_peft_model(model, peft_config)
+    if dist.get_rank() == 0:
+        model.print_trainable_parameters()
+    # ema_model = fsdp_ema_setup(ema_model, fsdp_config)
+    fsdp_model = fsdp_with_lora_wrapper(model, fsdp_config)
     apply_activation_checkpointing(
         fsdp_model, 
         checkpoint_wrapper_fn=functools.partial(
@@ -497,6 +515,7 @@ def main():
     )
 
     if dist.get_rank() == 0:
+        print("check fsdp-wrapped model param:")
         print(fsdp_model)
         for name, param in model.named_parameters():
             print(name, param.requires_grad)
@@ -577,7 +596,6 @@ def main():
     if training_args.visual_gen:
         vae_model.to(device).eval()
     fsdp_model.train()
-    ema_model.eval()
 
     # train loop
     start_time = time()
@@ -628,7 +646,7 @@ def main():
         total_norm = fsdp_model.clip_grad_norm_(training_args.max_grad_norm)
         optimizer.step()
         scheduler.step()
-        fsdp_ema_update(ema_model, fsdp_model, decay=training_args.ema)
+        # fsdp_ema_update(ema_model, fsdp_model, decay=training_args.ema)
 
         # Log loss values:
         if curr_step % training_args.log_every == 0:
@@ -686,7 +704,7 @@ def main():
                 ckpt_dir=training_args.checkpoint_dir, 
                 train_steps=curr_step, 
                 model=fsdp_model, 
-                ema_model=ema_model, 
+                ema_model=None, # we don't support using lora with ema
                 optimizer=optimizer, 
                 scheduler=scheduler, 
                 logger=logger,
