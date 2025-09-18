@@ -8,7 +8,7 @@
 <a href='./docs/arxiv_uni_v0.2.pdf'><img src='https://img.shields.io/badge/Technique-Report-red'></a>
 <a href='https://arxiv.org/abs/2508.05606v2'><img src='https://img.shields.io/badge/2508.05606v2-arxiv-red'></a>
 <a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/checkpoint-v0.1-blue?logo=huggingface'></a>
-<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2'><img src='https://img.shields.io/badge/checkpoint-v0.2-yellow?logo=huggingface'></a>
+<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2'><img src='https://img.shields.io/badge/checkpoint-v0.2-blue?logo=huggingface'></a>
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
 [Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
