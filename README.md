@@ -40,7 +40,7 @@
 <p align="center">
   <img src="assets/qualitative_results_geo.png" width="900">
 </p>
-
+*Note: UniCoT’s Nano‑Banana–style geography reasoning capability is a work in progress and is not based on the most recently released v0.2 checkpoint. The provided cases are for preview purposes only. We will update the geographic reasoning-related checkpoints and share our insights about implementing them as soon as they are ready.*
 ## Introduction
 While Chain-of-Thought (CoT) reasoning has been proven effective for complex text-based tasks, extending it to multimodal scenarios introduces new challenges. In visual contexts, human reasoning often relies on understanding how visual states evolve over time, such as tracking object movements and spatial interactions. This demands that Multimodal Large Language Models (MLLMs) reason not only at the textual level but also effectively incorporate and interpret visual cues.
 
