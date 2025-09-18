@@ -4,7 +4,7 @@
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
-<a href='https://sais-fuxi.github.io/projects/uni-cot/'><img src='https://img.shields.io/badge/Project-Page-green'></a>
+<a href='https://sais-fuxi.github.io/projects/uni-cot/'><img src='https://img.shields.io/badge/Project-Page-yellow'></a>
 <a href='https://arxiv.org/abs/2508.05606v2'><img src='https://img.shields.io/badge/UniCoT-Paper-red?logo=arxiv'></a>
 <a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/UniCoT-v0.1-blue?logo=huggingface'></a>
 <a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2'><img src='https://img.shields.io/badge/UniCoT-v0.2-blue?logo=huggingface'></a>
