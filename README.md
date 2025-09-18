@@ -32,6 +32,7 @@
 ## Overview
 <p align="center">
   <img src="assets/teaser.png" width="900"/>
+---
   <img src="assets/qualitative_results_geo.png" width="900">
 </p>
 While Chain-of-Thought (CoT) reasoning has been proven effective for complex text-based tasks, extending it to multimodal scenarios introduces new challenges. In visual contexts, human reasoning often relies on understanding how visual states evolve over time, such as tracking object movements and spatial interactions. This demands that Multimodal Large Language Models (MLLMs) reason not only at the textual level but also effectively incorporate and interpret visual cues.
