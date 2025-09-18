@@ -33,7 +33,9 @@
 <p align="center">
   <img src="assets/teaser.png" width="900"/>
 </p>
+
 ---
+
 <p align="center">
   <img src="assets/qualitative_results_geo.png" width="900">
 </p>
