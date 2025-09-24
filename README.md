@@ -4,32 +4,6 @@
 
 # Uni-CoT: Towards Unified Chain-of-Thought Reasoning Across Text and Vision
 
-<a href='https://sais-fuxi.github.io/projects/uni-cot/'><img src='https://img.shields.io/badge/Project-Page-yellow'></a>
-<a href='https://arxiv.org/abs/2508.05606v2'><img src='https://img.shields.io/badge/UniCoT-Paper-red?logo=arxiv'></a>
-<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT'><img src='https://img.shields.io/badge/UniCoT-v0.1-blue?logo=huggingface'></a>
-<a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2'><img src='https://img.shields.io/badge/UniCoT-v0.2-blue?logo=huggingface'></a>
-
-[Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
-[Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
-[Yuqing Sun](https://scholar.google.com/citations?hl=zh-CN&user=zR6eHu0AAAAJ)<sup>1</sup><sup>\*</sup>,
-[Tianjiao Li](https://scholar.google.com/citations?hl=zh-CN&user=so6xMg8AAAAJ)<sup>3</sup>,
-[Haoyu Pan](https://openreview.net/profile?id=~Haoyu_Pan3)<sup>1</sup>,
-[Mengping Yang](https://scholar.google.com/citations?user=yF34LtcAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup>,
-[Xiaomeng Yang](https://scholar.google.com/citations?hl=zh-CN&user=7evPWQYAAAAJ)<sup>1</sup>,
-[Chao Qu](https://scholar.google.com/citations?hl=en&user=DI2NyPsAAAAJ)<sup>4</sup>,
-[Zhiyu Tan](https://github.com/SAIS-FUXI)<sup>1,2</sup><sup>+#</sup>,
-[Hao Li](https://scholar.google.com/citations?user=pHN-QIwAAAAJ&hl=zh-CN)<sup>1,2</sup><sup>#</sup>,
-
-\* equal contribution + project leader # Corresponding author 
-
-<sup>1</sup>Shanghai Academy of AI for Science, <sup>2</sup>Fudan University, <sup>3</sup>Nanyang Technological University, <sup>4</sup>INFTech
-
-<div>
-<a href="mailto:qinluozheng@sais.org.cn">qinluozheng@sais.org.cn</a>&emsp;
-<a href="mailto:gongjia@sais.org.cn">gongjia@sais.org.cn</a>&emsp;
-<a href="mailto:sunyuqing@sais.org.cn">sunyuqing@sais.org.cn</a>
-</div>
-
 ## Overview
 <p align="center">
   <img src="assets/teaser.png" width="900"/>
@@ -48,8 +22,6 @@
 While Chain-of-Thought (CoT) reasoning has been proven effective for complex text-based tasks, extending it to multimodal scenarios introduces new challenges. In visual contexts, human reasoning often relies on understanding how visual states evolve over time, such as tracking object movements and spatial interactions. This demands that Multimodal Large Language Models (MLLMs) reason not only at the textual level but also effectively incorporate and interpret visual cues.
 
 To tackle this, we introduce **Uni-CoT**, a unified reasoning framework that extends CoT principles to the **multimodal domain**, empowering Multimodal Large Language Models (MLLMs) to perform **interpretable**, **step-by-step reasoning** across both **text and vision**. The core idea is to decompose complex multimodal tasks into structured, manageable steps that can be executed **sequentially or in parallel**, enabling more scalable and systematic reasoning as shown above.
-
-*Note: We would like to thank the [Bagel team](https://github.com/ByteDance-Seed/Bagel) for integrating strong text and image generation capabilities into a single model, which enables Uni-CoT to be implemented elegantly at current time.*
 
 ### 🧠 Reasoning Pipeline
 <p align="center">
@@ -70,37 +42,6 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 
 ---
 
-## 🔥 News
-
-- ✅ **2025.07.29** &mdash; We released **UniCoT-7B-MoT v0.1** on [Huggingface](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT), which extends Bagel-7B-MoT model to perform text-to-image generation with self-reflection reasoning mechanism.
-- ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606v1) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
-- ✅ **2025.09.18** &mdash; We released **UniCoT v0.2 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606) and [GitHub repository](./docs/arxiv_uni_v0.2.pdf). [**UniCoT v0.2**](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2) now supports sequential decomposition mechanism such as Nano-Banana–style geography reasoning and complicated image generation.
-- 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
----
-
-## ✅ To-Do: Uni-CoT Roadmap
-
-A list of planned features and enhancements for the **Uni-CoT** framework:
-
-### 🧠 Reasoning Framework
-✅ Release Micro-CoT Reasoning Machnism: self-reflection mechanism.   
-✅ Release Macro-CoT Reasoning Machnism: sequential decomposition mechanism.   
-[ ] Release Macro-CoT Reasoning Machnism: parallel decomposition mechanism.   
-[ ] Release Macro-CoT Reasoning Machnism: progressive refinement mechanism.   
-
-
-### 🤖 Training Framework
-✅ Provide SFT (Supervised Fine-Tuning) framework for multimodal reasoning    
-[ ] Provide RL (Reinforcement Learning) framework for multimodal reasoning  
-
-### 📊 Evaluation & Benchmarking
-✅ Evaluate Uni-CoT on a reasoning-based text-to-image generation benchmark [WISE](https://github.com/PKU-YuanGroup/WISE)  
-✅ Evaluate Uni-CoT on reasoning-based image editing benchmarks: [KRIS Bench](https://github.com/mercurystraw/Kris_Bench) and [RISE Bench](https://github.com/PhoenixZ810/RISEBench)   
-[ ] Evaluate Uni-CoT on a reasoning-based understanding benchmark
-
----
-
-
 ## Quickstart
 
 ### Installation
@@ -108,7 +49,7 @@ A list of planned features and enhancements for the **Uni-CoT** framework:
 The environment setup of Uni-CoT is consistent with its base model, [Bagel](https://github.com/ByteDance-Seed/Bagel).
 
 ```
-git clone https://github.com/Fr0zenCrane/UniCoT.git
+git clone https://this.repo.url/UniCoT.git
 cd UniCoT
 conda create -n unicot python=3.10 -y
 conda activate unicot
@@ -116,30 +57,8 @@ pip install -r requirements.txt
 pip install flash_attn==2.5.8 --no-build-isolation
 ```
 
-### Model Download
-
-You may directly download the huggingface [checkpoint](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT) or use the following script:
-
-```python
-from huggingface_hub import snapshot_download
-
-save_dir = "models/UniCoT-7B-MoT"
-repo_id = "Fr0zencr4nE/UniCoT-7B-MoT"
-cache_dir = save_dir + "/cache"
-
-snapshot_download(cache_dir=cache_dir,
-  local_dir=save_dir,
-  repo_id=repo_id,
-  local_dir_use_symlinks=False,
-  resume_download=True,
-  allow_patterns=["*.json", "*.safetensors", "*.bin", "*.py", "*.md", "*.txt"],
-)
-```
-
 
 ### Self-Reflection Reasoning
-
-To perform evaluation using UniCoT-7B-MoT, you need at least one GPU with 40GB or more VRAM. While lower GPU configurations are acceptable, they are not recommended due to potential performance limitations.
 
 #### Evaluation
 To reproduce our results on WISE benchmark, you can use script `./scripts/run_wise_self_reflection.sh`, you may specify your local checkpoint of UniCoT-7B-MoT and output dir using `--model_path` and `outdir`.
@@ -152,7 +71,7 @@ do
     CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection_wise.py \
         --group_id $i \
         --group_num $gpu_num \
-        --model_path "Fr0zencr4nE/UniCoT-7B-MoT" \
+        --model_path "UniCoT-7B-MoT" \
         --data_path "./eval/gen/wise/final_data.json" \
         --outdir "./results" \
         --cfg_text_scale 4 > process_log_$i.log 2>&1 &
@@ -173,7 +92,7 @@ do
     CUDA_VISIBLE_DEVICES=$i python inference_mdp_self_reflection.py \
         --group_id $i \
         --group_num $gpu_num \
-        --model_path "Fr0zencr4nE/UniCoT-7B-MoT" \
+        --model_path "UniCoT-7B-MoT" \
         --data_path "./test_prompts.txt" \
         --outdir "./results" \
         --cfg_text_scale 4 > process_log_$i.log 2>&1 &
@@ -227,25 +146,3 @@ We also achieve state-of-the-art (SOTA) performance on the KRIS benchmark, even 
 ---
 
 ---
-## Citation
-
-```bibtex
-@misc{qin2025unicot,
-      title={Uni-cot: Towards Unified Chain-of-Thought Reasoning Across Text and Vision}, 
-      author={Luozheng Qin and Jia Gong and Yuqing Sun and Tianjiao Li and Mengping Yang and Xiaomeng Yang and Chao Qu and Zhiyu Tan and Hao Li},
-      year={2025},
-      eprint={2508.05606},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.05606}, 
-}
-
-```
----
-## Acknowledgement
-
-- [Bagel](https://github.com/ByteDance-Seed/Bagel) proposed by ByteDance-Seed team. Bagel is a powerful and popular unified model for multimodal understanding and generation, making it an ideal foundation and startup for this project. We thank the ByteDance-Seed team for their outstanding work, which has made Uni-CoT possible.
-- [WISE](https://github.com/PKU-YuanGroup/WISE) proposed by PKU-YuanGroup. WISE provides a comprehensive benchmark for evaluating text-to-image models on complex semantic understanding and world knowledge integration. By requiring advanced reasoning capabilities, WISE serves as a valuable playground for chain-of-thought (CoT) self-reflection.
-- [KRIS-Bench](https://github.com/mercurystraw/Kris_Bench) proposed by Stepfun. KRIS-Bench serves as a comprehensive benchmark for evaluating both instruction-based image editing and knowledge-guided reasoning capabilities for unified models.
-- [RISE-Bench](https://github.com/PhoenixZ810/RISEBench) proposed by Shanghai AI Lab. RISE-Bench serves as a comprehensive benchmark for reasoning-informed visual editing. RISEBench focuses on four key reasoning types: Temporal, Causal, Spatial, and Logical Reasoning.
-
