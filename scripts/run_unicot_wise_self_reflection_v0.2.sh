@@ -5,7 +5,7 @@ do
     CUDA_VISIBLE_DEVICES=$i python inference_unicot_v0.2.py \
         --group_id $i \
         --group_num $gpu_num \
-        --mode pure_self_re \
+        --mode pure_self_reflection \
         --model_path "ByteDance-Seed/BAGEL-7B-MoT" \
         --model_fine_tuned_path "Fr0zencr4nE/UniCoT-7B-MoT-v0.2" \
         --data_path "./eval/gen/wise/final_data.json" \
