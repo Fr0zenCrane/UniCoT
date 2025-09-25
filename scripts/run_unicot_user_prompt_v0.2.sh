@@ -7,9 +7,9 @@ do
         --group_num $gpu_num \
         --mode pure_breakdown \
         --model_path "/inspire/ssd/project/sais-mtm/public/qlz/pretrained_models/BAGEL-7B-MoT" \
-        --model_fine_tuned_path "/inspire/ssd/project/sais-mtm/public/qlz/code/BagelCoT/results/0908_unicot_v2.0_v2_0908_final_ripple/checkpoints/0009000" \
+        --model_fine_tuned_path "Fr0zencr4nE/UniCoT-7B-MoT-v0.2" \
         --data_path "./test_prompts.txt" \
-        --output_dir "./results/further-s-1000" \
+        --output_dir "./results/" \
         --cfg_text_scale 4 \
         --cfg_img_scale 2.0 \
         > process_log_$i.log 2>&1 &
