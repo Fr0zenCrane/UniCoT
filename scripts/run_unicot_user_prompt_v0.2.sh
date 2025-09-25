@@ -6,7 +6,7 @@ do
         --group_id $i \
         --group_num $gpu_num \
         --mode pure_breakdown \
-        --model_path "/inspire/ssd/project/sais-mtm/public/qlz/pretrained_models/BAGEL-7B-MoT" \
+        --model_path "ByteDance-Seed/BAGEL-7B-MoT" \
         --model_fine_tuned_path "Fr0zencr4nE/UniCoT-7B-MoT-v0.2" \
         --data_path "./test_prompts.txt" \
         --output_dir "./results/" \
