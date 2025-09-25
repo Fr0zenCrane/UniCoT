@@ -132,6 +132,7 @@ The results in the table below demonstrate that our model effectively refines th
 
 ### Quantitative Results on [KRIS Bench](https://github.com/mercurystraw/Kris_Bench) 
 We also achieve state-of-the-art (SOTA) performance on the KRIS benchmark, even surpassing the closed-source model Gemini2.0.
+
 | Model           | Attribute Perception | Spatial Perception | Temporal Perception | Factual Avg | Social Science | Natural Science | Conceptual Avg | Logical Reasoning | Instruction Decomposition | Procedural Avg | Overall Score |
 |----------------|----------------------|---------------------|----------------------|-------------|----------------|------------------|----------------|--------------------|-----------------------------|----------------|----------------|
 | Gemini 2.0 (Google)        | 66.33               | 63.33              | 63.92               | 65.26      | 68.19         | 56.94           | 59.65         | 54.13              | 71.67                       | 62.90          | 62.41           |
