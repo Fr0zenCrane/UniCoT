@@ -230,14 +230,11 @@ We also achieve state-of-the-art (SOTA) performance on the KRIS benchmark, even 
 ## Citation
 
 ```bibtex
-@misc{qin2025unicot,
-      title={Uni-cot: Towards Unified Chain-of-Thought Reasoning Across Text and Vision}, 
-      author={Luozheng Qin and Jia Gong and Yuqing Sun and Tianjiao Li and Mengping Yang and Xiaomeng Yang and Chao Qu and Zhiyu Tan and Hao Li},
-      year={2025},
-      eprint={2508.05606},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2508.05606}, 
+@article{qin2025uni,
+  title={Uni-cot: Towards unified chain-of-thought reasoning across text and vision},
+  author={Qin, Luozheng and Gong, Jia and Sun, Yuqing and Li, Tianjiao and Yang, Mengping and Yang, Xiaomeng and Qu, Chao and Tan, Zhiyu and Li, Hao},
+  journal={arXiv preprint arXiv:2508.05606},
+  year={2025}
 }
 
 ```
