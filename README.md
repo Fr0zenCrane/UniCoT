@@ -76,6 +76,8 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 - ✅ **2025.08.08** &mdash; We released **UniCoT v0.1 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606v1) and [GitHub repository](./docs/arxiv_uni_v0.1.pdf).
 - ✅ **2025.09.18** &mdash; We released **UniCoT v0.2 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606) and [GitHub repository](./docs/arxiv_uni_v0.2.pdf). [**UniCoT v0.2**](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2) now supports sequential decomposition mechanism such as Nano-Banana–style geography reasoning and complicated image generation.
 - 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
+- ✅ **2025.12.18** &mdash; We released two datasets [Fr0zencr4nE/UniCoT-Self-Reflection-6K](https://huggingface.co/datasets/Fr0zencr4nE/UniCoT-Self-Reflection-6K) and [Fr0zencr4nE/UniCoT-Breakdown-3K](https://huggingface.co/datasets/Fr0zencr4nE/UniCoT-Breakdown-3K) for building two forms of unified interleaved reasoning mechanism implemented in Uni-CoT: self-reflection and breakdown!
+- 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
 ---
 
 ## ✅ To-Do: Uni-CoT Roadmap
