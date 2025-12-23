@@ -1,5 +1,3 @@
-torchrun 
-
 pretrained_path="ByteDance-Seed/BAGEL-7B-MoT"
 model_path=$pretrained_path # set this if you want to reproduce UniCoT yourself
 # model_path="Fr0zencr4nE/UniCoT-7B-MoT-v0.2" # uncomment this line if you want to further finetune on UniCoT-7B-MoT-v0.2
