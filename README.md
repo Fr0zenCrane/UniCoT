@@ -184,6 +184,24 @@ wait
 echo "All background processes finished."
 ```
 
+#### Training
+First prepare and format your data, and then start the training by running the following script:
+
+```sh
+git clone https://github.com/Fr0zenCrane/UniCoT.git
+cd UniCoT
+bash ./scripts/train.sh
+```
+We also provide a LoRA fine-tuning script for users with limited compute, the setup and usage are similar to full fine-tuning:
+```sh
+git clone https://github.com/Fr0zenCrane/UniCoT.git
+cd UniCoT
+bash ./scripts/train_lora.sh
+```
+Important: All reported experimental results were obtained with full fine-tuning. We recommend full fine-tuning for best performance.
+For more details related to training, please refer to the training manual of Uni-CoT series' base model: [Bagel](https://github.com/ByteDance-Seed/Bagel/blob/main/TRAIN.md)
+
+
 ## Preliminary Results
 ### Qualitative Results for Image Generation
 <p align="left">
