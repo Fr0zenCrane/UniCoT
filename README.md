@@ -10,7 +10,7 @@
 <a href='https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2'><img src='https://img.shields.io/badge/UniCoT-v0.2-blue?logo=huggingface'></a>
 
 [Luozheng Qin](https://scholar.google.com/citations?user=41BWCzkAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
-[Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup>,
+[Jia Gong](https://scholar.google.com/citations?user=ZV-ThegAAAAJ&hl=zh-CN&oi=ao)<sup>1</sup><sup>\*</sup><sup>#</sup>,
 [Yuqing Sun](https://scholar.google.com/citations?hl=zh-CN&user=zR6eHu0AAAAJ)<sup>1</sup><sup>\*</sup>,
 [Tianjiao Li](https://scholar.google.com/citations?hl=zh-CN&user=so6xMg8AAAAJ)<sup>3</sup>,
 [Haoyu Pan](https://openreview.net/profile?id=~Haoyu_Pan3)<sup>1</sup>,
