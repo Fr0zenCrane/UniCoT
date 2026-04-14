@@ -77,6 +77,7 @@ The Uni-CoT framework aims to solve complex multimodal tasks, including:
 - ✅ **2025.09.18** &mdash; We released **UniCoT v0.2 technical report** on [Arxiv](https://arxiv.org/abs/2508.05606) and [GitHub repository](./docs/arxiv_uni_v0.2.pdf). [**UniCoT v0.2**](https://huggingface.co/Fr0zencr4nE/UniCoT-7B-MoT-v0.2) now supports sequential decomposition mechanism such as Nano-Banana–style geography reasoning and complicated image generation.
 - ✅ **2025.12.18** &mdash; We released two datasets [Fr0zencr4nE/UniCoT-Self-Reflection-6K](https://huggingface.co/datasets/Fr0zencr4nE/UniCoT-Self-Reflection-6K) and [Fr0zencr4nE/UniCoT-Breakdown-3K](https://huggingface.co/datasets/Fr0zencr4nE/UniCoT-Breakdown-3K) for building two forms of unified interleaved reasoning mechanism implemented in Uni-CoT: self-reflection and breakdown!
 - 🎉 **2026.1.27** &mdash; Uni-CoT has been accepted to ICLR 2026!!!
+- 🔥 **2026.4.14** We are thrilled to announce [Uni-ViGU](https://github.com/Fr0zenCrane/Uni-ViGU), a new work from our team that achieves unified video understanding and generation within an extended video generator using unified flow matching.
 - 🔥 We are still working on this project to implement more kinds of Chain-of-Thought (CoT) mechanisms into a unified model. Please stay tuned!
 ---
 
